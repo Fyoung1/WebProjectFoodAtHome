@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\FruitsAndBerries;
 use App\Models\MilkProduct;
 use App\Models\VegetablesProduct;
 use Illuminate\Database\Seeder;
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->calL(MilkProductSeeder::class);
         $this->call(VegetablesProductSeeder::class);
+        $this->call(FruitsAndBerries::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

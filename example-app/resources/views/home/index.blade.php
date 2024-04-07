@@ -1,110 +1,118 @@
 @extends('layouts.app')
 
+
 @section('content')
     <script src="/livewire/livewire.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <div class="container">
+
+    <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Молоко и яйца</h1>
+    <div class="firstProductOnPage"style="position:relative;left: 220px;top:40px;width: 65%;height: 300px; " >
+    <button class="scroll-left">&lt;</button>
         <div class="milkproduc">
-            <h1 style="margin-top: -70px;position: absolute">Молоко и яйца</h1>
-            <button class="scroll-left">&lt;</button>
-            <div class="contex">
                 <div class="scrollable-content">
                     @foreach ($MilkProducts as $MilkProduct)
                         <input type="hidden" value="{{ $MilkProduct->id }}" name="id">
+                        <input type="hidden" value="{{ $MilkProduct->price }}" name="price">
                         <input type="hidden" value="{{ $MilkProduct->name }}" name="name">
                         <input type="hidden" value="{{ $MilkProduct->image }}"  name="image">
-                        <img src="{{ url($MilkProduct->image) }}" alt="" class="">
-                        <h3>{{ $MilkProduct->name }}</h3>
-                        <input type="hidden" value="{{ $MilkProduct->price }}" name="price">
-                        <h2 >{{ $MilkProduct->price }}₽</h2>
                         <input type="hidden" value="{{ $MilkProduct->description }}" name="description">
-                        <h4 >{{ $MilkProduct->description }}</h4>
+                        <img style="width: 125px;height: 125px;" src="{{ url($MilkProduct->image) }}" alt="" class="">
+                        <h2 style="position: relative;top: 45%;height: 35px;width: 20%;margin-left: -110px;" >{{ $MilkProduct->price }}₽</h2>
+                        <p style="position: relative;top: 63%;height: 45px;width: 20%;left: -50px">{{ $MilkProduct->name}}  {{$MilkProduct->description }}</p>
                         <input type="hidden" value="1" name="quantity">
-                        <input type="hidden" value="{{ $MilkProduct->calories }}" name="calories">
-                        <h4 >{{ $MilkProduct->calories }}кк</h4>
-                        <button id="{{$MilkProduct->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
+                        <button style=" position:relative;top: 90%;height: 25px;width: 20%;left: -140px;" id="{{$MilkProduct->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
                     @endforeach
                 </div>
-            </div>
-            <button class="scroll-right">&gt;</button>
+        </div>
+    <button class="scroll-right">&gt;</button>
+    </div>
+                <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Овощи и зелень</h1>
+                        <div class="secondProductOnPage" style="position:relative;left: 220px;top:40px;width: 65%;height: 300px;">
+                            <button class="scroll-left-vegetables">&lt;</button>
+                            <div class="vegetablesproduct">
+                                <div class="scrollable-content-vegetables">
+                                    @foreach ($VegetablesProducts as $VegetablesProduct)
+                                        <input type="hidden" value="{{ $VegetablesProduct->id }}" name="id">
+                                        <input type="hidden" value="{{ $VegetablesProduct->price }}" name="price">
+                                        <input type="hidden" value="{{ $VegetablesProduct->name }}" name="name">
+                                        <input type="hidden" value="{{ $VegetablesProduct->image }}"  name="image">
+                                        <input type="hidden" value="{{ $VegetablesProduct->description }}" name="description">
+                                        <img style="width: 125px;height: 125px;" src="{{ url($VegetablesProduct->image) }}" alt="" class="">
+                                        <h2 style="position: relative;top: 45%;height: 35px;width: 20%;margin-left: -110px;" >{{ $VegetablesProduct->price }}₽</h2>
+                                        <p style="position: relative;top: 63%;height: 45px;width: 20%;left: -50px">{{ $VegetablesProduct->name}}  {{$VegetablesProduct->description }}</p>
+                                        <input type="hidden" value="1" name="quantity">
+                                        <button style=" position:relative;top: 90%;height: 25px;width: 20%;left: -140px;" id="{{$VegetablesProduct->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <button class="scroll-right-vegetables">&gt;</button>
+                        </div>
+    <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Фрукты и ягоды</h1>
 
-            <button id="clearCart" onclick='myFunctionСlear()'>Удалить корзину</button>
-            <p class="nameCart">Корзина</p>
-            <livewire:product />
-
-{{--        </div>--}}
-{{--                    <div class="milkproduc">--}}
-{{--                        <h1 style="margin-top: -70px;position: absolute">Овощи и зелень</h1>--}}
-{{--                        <button class="scroll-left-vegetables">&lt;</button>--}}
-{{--                        <div class="contex-vegetables">--}}
-{{--                            <div class="scrollable-content-vegetables">--}}
-{{--                                @foreach ($VegetablesProducts as $VegetablesProduct)--}}
-{{--                                    <form action="{{ route('cart.index') }}">--}}
-{{--                                        @csrf--}}
-{{--                                        <input type="hidden" value="{{ $VegetablesProduct->id }}" name="id">--}}
-{{--                                        <input type="hidden" value="{{ $VegetablesProduct->name }}" name="name">--}}
-{{--                                        <input type="hidden" value="{{ $VegetablesProduct->image }}"  name="image">--}}
-{{--                                        <img src="{{ url($VegetablesProduct->image) }}" alt="" class="">--}}
-{{--                                        <h3>{{ $VegetablesProduct->name }}</h3>--}}
-{{--                                        <input type="hidden" value="{{ $VegetablesProduct->price }}" name="price">--}}
-{{--                                        <h2 >{{ $VegetablesProduct->price }}₽</h2>--}}
-{{--                                        <input type="hidden" value="{{ $VegetablesProduct->description }}" name="description">--}}
-{{--                                        <h4 >{{ $VegetablesProduct->description }}</h4>--}}
-{{--                                        <input type="hidden" value="1" name="quantity">--}}
-{{--                                        <button type="submit" class="text-white text-sm bg-gray-900 rounded">В корзину</button>--}}
-{{--                                    </form>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <button class="scroll-right-vegetables">&gt;</button>--}}
-{{--                    </div>--}}
-
-{{--    </div>--}}
 
 
 @endsection()
 
-<style>
+@section('cart')
+    <script src="/livewire/livewire.js"></script>
+    <div class="cart">
+        <button id="clearCart" onclick='myFunctionСlear()'>Удалить корзину</button>
+        <p class="nameCart">Корзина</p>
+            <div class="showCart">
+                <livewire:product />
+            </div>
+    </div>
+@endsection()
 
-    .nameCart
+
+<style>
+    .cart
     {
-     margin-left: 1100px;
-     margin-top: -85px;
+        background: #463C54;
+        width: 19%;
+        height: 100%;
+        margin-left: 80%;
+        top: 17%;
+        position: fixed;
+        overflow: auto;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;
+    }
+    .cart::-webkit-scrollbar {
+        display: none;
     }
 
     .milkproduc
     {
-        margin-top: 105px;
-        margin-left: 240px;
-    }
-
-    .contex {
         position: relative;
         display: flex;
-        width: 1050px;
-        margin-left: 50px;
-        margin-top: -65px;
+        width: 80%;
+        height: 100%;
         overflow: hidden;
+        left: 5%;
+        top: -40px;
     }
-
-    .contex-vegetables {
+    .vegetablesproduct
+    {
         position: relative;
         display: flex;
-        width: 1050px;
-        margin-left: 50px;
-        margin-top: -65px;
+        width: 80%;
+        height: 100%;
         overflow: hidden;
+        left: 5%;
+        top: -40px;
     }
-
 
     .scrollable-content {
-        display: flex;
+        display:flex;
         width: max-content;
+        height: 250px;
         transition: transform 0.3s ease-in-out;
     }
     .scrollable-content-vegetables {
         display: flex;
         width: max-content;
+        height: 250px;
         transition: transform 0.3s ease-in-out;
     }
 
@@ -122,8 +130,8 @@
     }
     .scroll-right {
         position: relative;
-        top: -263px;
-        margin-right: 415px;
+        top: -85px;
+        right: auto;
         transform: translateY(-50%);
         padding: 5px;
         font-size: 20px;
@@ -166,18 +174,7 @@
 
 </style>
 
-            <style>
-                .text-right
-                {
-                    margin-left: 1250px;
-                    margin-top: -200px;
-                }
-            </style>
-
-
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
     <script type="text/javascript">
         document.getElementById('myButton').onclick = myFunction;
         function myFunction(id) {
@@ -213,8 +210,8 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const container = document.querySelector('.contex');
-        const container1 = document.querySelector('.contex-vegetables');
+        const container = document.querySelector('.milkproduc');
+        const container1 = document.querySelector('.vegetablesproduct');
         const scrollableContent = document.querySelector('.scrollable-content');
         const scrollableContent1 = document.querySelector('.scrollable-content-vegetables');
         const scrollLeftBtn = document.querySelector('.scroll-left');

@@ -1,9 +1,6 @@
-
-<header class="header">
-    <div class="container">
-        <title>fyoungproject</title>
-        <h1 style="margin-left: 65px;margin-top: 34px">fyoung</h1>
-                <div class="text-end">
+ <title>fyoungproject</title>
+ <div class="paramsHeader">
+        <h1 style="margin-left: 5%;width: 8%;">fyoung</h1>
                     <form action="" class="search-bar">
                         <input type="search" name="search" pattern=".*\S.*" required>
                         <button class="search-btn" type="submit">
@@ -20,32 +17,39 @@
                             <a href="{{ route('login.perform') }}" class="button1">Войти</a>
                     @endguest
                 </div>
-        </div>
-</header>
+ </div>
 
 <style>
-    .header
+    .paramsHeader
     {
-        height: 90px;
-        margin-left: -8px;
-        margin-right:-8px;
-        margin-top: -21px;
-        display: flex;
-        background: #888a85;
-    }
-    .text-end
-    {
+        position: fixed;
+        top: 0;
         width: 100%;
-        max-width: none;
-        margin-left: 200px;
-        margin-top: -43px;
-        display: flex;
+        height: 8%;
+        /*overflow: hidden;*/
+    }
+    .search-bar
+    {
+        position: relative;
+        margin-top: -50px;
+        width: 40%;
+        margin-left: 20%;
+
     }
     .button1
     {
+        width: 10%;
         display: flex;
-        width: 4%;
-        margin-left: 118px;
+        margin-left: 90%;
+        margin-top: -50px;
+    }
+
+
+    .button1
+    {
+        /*display: flex;*/
+        /*width: 4%;*/
+        /*margin-left: 118px;*/
     }
     /** {*/
     /*    border: 0;*/

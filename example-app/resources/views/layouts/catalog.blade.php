@@ -21,7 +21,7 @@
     .box
     {
         position: absolute;
-        bottom: 0px;
+        /*bottom: 0px;*/
         top: 89px;
     }
     .box {
@@ -34,7 +34,7 @@
     .box h2 {
         color: #000000;
         /*background: #808080;*/
-        padding: 10px 20px;
+        padding: 10px 10px;
         font-size: 20px;
         font-weight: 700;
         border-top-left-radius: 10px;
