@@ -48,6 +48,89 @@
                             <button class="scroll-right-vegetables">&gt;</button>
                         </div>
     <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Фрукты и ягоды</h1>
+    <div class="thirdProductOnPage" style="position:relative;left: 220px;top:40px;width: 65%;height: 300px;">
+        <button class="scroll-left-vegetables">&lt;</button>
+        <div class="vegetablesproduct">
+            <div class="scrollable-content-vegetables">
+                @foreach ($fruitsandberriesProducts as $FruitsAndBerries )
+                    <input type="hidden" value="{{ $FruitsAndBerries->id }}" name="id">
+                    <input type="hidden" value="{{ $FruitsAndBerries->price }}" name="price">
+                    <input type="hidden" value="{{ $FruitsAndBerries->name }}" name="name">
+                    <input type="hidden" value="{{ $FruitsAndBerries->image }}"  name="image">
+                    <input type="hidden" value="{{ $FruitsAndBerries->description }}" name="description">
+                    <img style="width: 125px;height: 125px;" src="{{ url($FruitsAndBerries->image) }}" alt="" class="">
+                    <h2 style="position: relative;top: 45%;height: 35px;width: 20%;margin-left: -110px;" >{{ $FruitsAndBerries->price }}₽</h2>
+                    <p style="position: relative;top: 63%;height: 45px;width: 20%;left: -50px">{{ $FruitsAndBerries->name}}  {{$FruitsAndBerries->description }}</p>
+                    <input type="hidden" value="1" name="quantity">
+                    <button style=" position:relative;top: 90%;height: 25px;width: 20%;left: -140px;" id="{{$FruitsAndBerries->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
+                @endforeach
+            </div>
+        </div>
+        <button class="scroll-right-vegetables">&gt;</button>
+    </div>
+    <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Сладости</h1>
+    <div class="fourthProductOnPage" style="position:relative;left: 220px;top:40px;width: 65%;height: 300px;">
+        <button class="scroll-left-vegetables">&lt;</button>
+        <div class="vegetablesproduct">
+            <div class="scrollable-content-vegetables">
+                @foreach ($CandyProducts as $CandyProduct )
+                    <input type="hidden" value="{{ $CandyProduct->id }}" name="id">
+                    <input type="hidden" value="{{ $CandyProduct->price }}" name="price">
+                    <input type="hidden" value="{{ $CandyProduct->name }}" name="name">
+                    <input type="hidden" value="{{ $CandyProduct->image }}"  name="image">
+                    <input type="hidden" value="{{ $CandyProduct->description }}" name="description">
+                    <img style="width: 125px;height: 125px;" src="{{ url($CandyProduct->image) }}" alt="" class="">
+                    <h2 style="position: relative;top: 45%;height: 35px;width: 20%;margin-left: -110px;" >{{ $CandyProduct->price }}₽</h2>
+                    <p style="position: relative;top: 63%;height: 45px;width: 20%;left: -50px">{{ $CandyProduct->name}}  {{$CandyProduct->description }}</p>
+                    <input type="hidden" value="1" name="quantity">
+                    <button style=" position:relative;top: 90%;height: 25px;width: 20%;left: -140px;" id="{{$CandyProduct->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
+                @endforeach
+            </div>
+        </div>
+        <button class="scroll-right-vegetables">&gt;</button>
+    </div>
+    <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Мясо и птица</h1>
+    <div class="fivethProductOnPage" style="position:relative;left: 220px;top:40px;width: 65%;height: 300px;">
+        <button class="scroll-left-vegetables">&lt;</button>
+        <div class="vegetablesproduct">
+            <div class="scrollable-content-vegetables">
+                @foreach ($MeatAndBidrds as $MeatAndBirdProduct )
+                    <input type="hidden" value="{{ $MeatAndBirdProduct->id }}" name="id">
+                    <input type="hidden" value="{{ $MeatAndBirdProduct->price }}" name="price">
+                    <input type="hidden" value="{{ $MeatAndBirdProduct->name }}" name="name">
+                    <input type="hidden" value="{{ $MeatAndBirdProduct->image }}"  name="image">
+                    <input type="hidden" value="{{ $MeatAndBirdProduct->description }}" name="description">
+                    <img style="width: 125px;height: 125px;" src="{{ url($MeatAndBirdProduct->image) }}" alt="" class="">
+                    <h2 style="position: relative;top: 45%;height: 35px;width: 20%;margin-left: -110px;" >{{ $MeatAndBirdProduct->price }}₽</h2>
+                    <p style="position: relative;top: 63%;height: 45px;width: 20%;left: -50px">{{ $MeatAndBirdProduct->name}}  {{$MeatAndBirdProduct->description }}</p>
+                    <input type="hidden" value="1" name="quantity">
+                    <button style=" position:relative;top: 90%;height: 25px;width: 20%;left: -140px;" id="{{$MeatAndBirdProduct->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
+                @endforeach
+            </div>
+        </div>
+        <button class="scroll-right-vegetables">&gt;</button>
+    </div>
+    <h1 style="position: relative; top:40px ; left: 280px;width: 20%">Рыба и морепродукты</h1>
+    <div class="sixtsProductOnPage" style="position:relative;left: 220px;top:40px;width: 65%;height: 300px;">
+        <button class="scroll-left-vegetables">&lt;</button>
+        <div class="vegetablesproduct">
+            <div class="scrollable-content-vegetables">
+                @foreach ($FishProducts as $FishProduct )
+                    <input type="hidden" value="{{ $FishProduct->id }}" name="id">
+                    <input type="hidden" value="{{ $FishProduct->price }}" name="price">
+                    <input type="hidden" value="{{ $FishProduct->name }}" name="name">
+                    <input type="hidden" value="{{ $FishProduct->image }}"  name="image">
+                    <input type="hidden" value="{{ $FishProduct->description }}" name="description">
+                    <img style="width: 125px;height: 125px;" src="{{ url($FishProduct->image) }}" alt="" class="">
+                    <h2 style="position: relative;top: 45%;height: 35px;width: 20%;margin-left: -110px;" >{{ $FishProduct->price }}₽</h2>
+                    <p style="position: relative;top: 63%;height: 45px;width: 20%;left: -50px">{{ $FishProduct->name}}  {{$FishProduct->description }}</p>
+                    <input type="hidden" value="1" name="quantity">
+                    <button style=" position:relative;top: 90%;height: 25px;width: 20%;left: -140px;" id="{{$FishProduct->id}}" onclick='myFunction(this.id)'>Нажми меня</button>
+                @endforeach
+            </div>
+        </div>
+        <button class="scroll-right-vegetables">&gt;</button>
+    </div>
 
 
 

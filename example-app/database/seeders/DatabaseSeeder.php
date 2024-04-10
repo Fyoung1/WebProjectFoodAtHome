@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\FruitsAndBerries;
-use App\Models\MilkProduct;
-use App\Models\VegetablesProduct;
+use App\Models\CandyProduct;
+use App\Models\MeatAndBirdProduct;
+use App\Models\Product;
+use App\Models\WaterProduct;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,14 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->calL(MilkProductSeeder::class);
-        $this->call(VegetablesProductSeeder::class);
-        $this->call(FruitsAndBerries::class);
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(ProductSeeder::class);
     }
 }

@@ -22,7 +22,6 @@
         height: 100%;
         top:76px;
         position: relative;
-        background: #4e9a06;
     }
 
 </style>

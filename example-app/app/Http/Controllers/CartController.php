@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\MilkProduct;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
     public function showCartTable()
     {
-        $MilkProduct = MilkProduct::all();
+        $Product = Product::all();
 
-        return view('layouts.cart', compact('MilkProduct'));
+        return view('layouts.cart', compact('Product'));
     }
 
     public function addToCart($id)
     {
-        $MilkProduct = MilkProduct::find($id);
-        if (!$MilkProduct) {
+        $Product = Product::find($id);
+        if (!$Product) {
             abort(404);
         }
 
@@ -28,10 +28,10 @@ class CartController extends Controller
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
-                "name" => $MilkProduct->name,
+                "name" => $Product->name,
                 "quantity" => 1,
-                "price" => $MilkProduct->price,
-                "description" => $MilkProduct->description,
+                "price" => $Product->price,
+                "description" => $Product->description,
             ];
         }
         session()->put('cart', $cart);
