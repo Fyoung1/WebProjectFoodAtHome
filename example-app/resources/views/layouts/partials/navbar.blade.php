@@ -1,23 +1,40 @@
  <title>fyoungproject</title>
+
  <div class="paramsHeader">
-        <h1 style="margin-left: 5%;width: 8%;">fyoung</h1>
-                    <form action="" class="search-bar">
+     <img src="{{ asset('image/tracking_10149339.png') }}" style="position: relative;width: 40px;height: 40px;top:3%;left:9%;" alt="My Image">
+        <h1 style="margin-left: 4%;width: 15%;height: 4%;margin-top:-0.7%;"><a href='/' style="text-decoration: none; color: initial;"> FOOD at HOME</a></h1>
+                    <form action="" class="search-bar" style="position: relative;top:37%;">
                         <input type="search" name="search" pattern=".*\S.*" required>
-                        <button class="search-btn" type="submit">
-                            <span>Search</span>
+                        <button class="search-btn" type="submit" style="border: 0px solid #FFFFFF;color:#888a85;">
+                            <span>Найти</span>
                         </button>
                     </form>
                     @auth
                         {{auth()->user()->name}}
-                            <a href="{{ route('logout.perform') }}">Выйти</a>
-                        <a href="{{ route('cart.index') }}" class="button1">Корзина</a>
-                    @endauth
+         <nav style="margin-top: -1%;margin-right: 5%;" >
+             <ul>
+                 <img src="{{ asset('image/heart_1077035.png') }}" style="position: relative;width: 20px;height: 20px;left: 0.7%;" alt="My Image">
+                 <li><a href="/favorites" >Избранное</a></li>
+                 <img src="{{ asset('image/shopping-cart_2169842.png') }}" style="position: relative;width: 20px;height: 20px;left: 0.7%;" alt="My Image">
+                 <li><a href="/checkout" >Корзина</a></li>
+                 <img src="{{ asset('image/home_263115.png') }}" style="position: relative;width: 20px;height: 20px;left:0.7%;top:2%;" alt="My Image">
+                 <li style="margin-right: 1%;" ><a href="#">Аккаунт</a>
+                     <ul>
+                         <li><a href="/user-data-person">Мои данные</a></li>
+                         <li><a href="/order-history">Мои заказы</a></li>
+                         <li><a href="#">Мои адреса</a></li>
+                         <li><a href="{{ route('logout.perform') }}">Выйти</a></li>
+                     </ul>
+                 </li>
+             </ul>
+         </nav>
+     @endauth
 
                     @guest
-                            <a href="{{ route('login.perform') }}" class="button1">Войти</a>
+         <img src="{{ asset('image/home_263115.png') }}" style="position: relative;left:93%;width: 20px;height: 20px;margin-top:-0.9%;" alt="My Image">
+         <a href="{{ route('login.perform') }}" style="position: relative; left: 4.5%; text-decoration: none; color: initial;font-size: 20px;margin-top: -1.1%;" class="button1">Войти</a>
                     @endguest
                 </div>
- </div>
 
 <style>
     .paramsHeader
@@ -26,6 +43,10 @@
         top: 0;
         width: 100%;
         height: 8%;
+        background: #FFFFFF;
+        left: 0;
+        border-bottom: 1px solid #888a85;
+        box-sizing: border-box;
         /*overflow: hidden;*/
     }
     .search-bar
@@ -44,169 +65,64 @@
         margin-top: -50px;
     }
 
-
     .button1
     {
         /*display: flex;*/
         /*width: 4%;*/
         /*margin-left: 118px;*/
     }
-    /** {*/
-    /*    border: 0;*/
-    /*    box-sizing: border-box;*/
-    /*    margin: 0;*/
-    /*    padding: 0;*/
-    /*}*/
-    /*:root {*/
-    /*    !*font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));*!*/
-    /*}*/
-    /*body, button, input {*/
-    /*    font: 1em Hind, sans-serif;*/
-    /*    line-height: 1.5em;*/
-    /*}*/
-    /*body, input {*/
-    /*    color: #171717;*/
-    /*}*/
-    /*body, .search-bar {*/
-    /*    display: flex;*/
-    /*}*/
-    /*body {*/
-    /*    background: #f1f1f1;*/
-    /*    height: 100vh;*/
-    /*}*/
-    /*.search-bar input,*/
-    /*.search-btn,*/
-    /*.search-btn:before,*/
-    /*.search-btn:after {*/
-    /*    transition: all 0.25s ease-out;*/
-    /*}*/
-    /*.search-bar input,*/
-    /*.search-btn {*/
-    /*    width: 3em;*/
-    /*    height: 3em;*/
-    /*}*/
-    /*.search-bar input:invalid:not(:focus),*/
-    /*.search-btn {*/
-    /*    cursor: pointer;*/
-    /*}*/
-    /*.search-bar,*/
-    /*.search-bar input:focus,*/
-    /*.search-bar input:valid  {*/
-    /*    width: 100%;*/
-    /*}*/
-    /*.search-bar input:focus,*/
-    /*.search-bar input:not(:focus) + .search-btn:focus {*/
-    /*    outline: transparent;*/
-    /*}*/
-    /*.search-bar {*/
-    /*    margin: auto;*/
-    /*    padding: 1.5em;*/
-    /*    justify-content: center;*/
-    /*    max-width: 30em;*/
-    /*}*/
-    /*.search-bar input {*/
-    /*    background: transparent;*/
-    /*    border-radius: 1.5em;*/
-    /*    box-shadow: 0 0 0 0.4em #171717 inset;*/
-    /*    padding: 0.75em;*/
-    /*    transform: translate(0.5em,0.5em) scale(0.5);*/
-    /*    transform-origin: 100% 0;*/
-    /*    -webkit-appearance: none;*/
-    /*    -moz-appearance: none;*/
-    /*    appearance: none;*/
-    /*}*/
-    /*.search-bar input::-webkit-search-decoration {*/
-    /*    -webkit-appearance: none;*/
-    /*}*/
-    /*.search-bar input:focus,*/
-    /*.search-bar input:valid {*/
-    /*    background: #fff;*/
-    /*    border-radius: 0.375em 0 0 0.375em;*/
-    /*    box-shadow: 0 0 0 0.1em #d9d9d9 inset;*/
-    /*    transform: scale(1);*/
-    /*}*/
-    /*.search-btn {*/
-    /*    background: #171717;*/
-    /*    border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;*/
-    /*    padding: 0.75em;*/
-    /*    position: relative;*/
-    /*    transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);*/
-    /*    transform-origin: 0 50%;*/
-    /*}*/
-    /*.search-btn:before,*/
-    /*.search-btn:after {*/
-    /*    content: "";*/
-    /*    display: block;*/
-    /*    opacity: 0;*/
-    /*    position: absolute;*/
-    /*}*/
-    /*.search-btn:before {*/
-    /*    border-radius: 50%;*/
-    /*    box-shadow: 0 0 0 0.2em #f1f1f1 inset;*/
-    /*    top: 0.75em;*/
-    /*    left: 0.75em;*/
-    /*    width: 1.2em;*/
-    /*    height: 1.2em;*/
-    /*}*/
-    /*.search-btn:after {*/
-    /*    background: #f1f1f1;*/
-    /*    border-radius: 0 0.25em 0.25em 0;*/
-    /*    top: 51%;*/
-    /*    left: 51%;*/
-    /*    width: 0.75em;*/
-    /*    height: 0.25em;*/
-    /*    transform: translate(0.2em,0) rotate(45deg);*/
-    /*    transform-origin: 0 50%;*/
-    /*}*/
-    /*.search-btn span {*/
-    /*    display: inline-block;*/
-    /*    overflow: hidden;*/
-    /*    width: 1px;*/
-    /*    height: 1px;*/
-    /*}*/
 
-    /*!* Active state *!*/
-    /*.search-bar input:focus + .search-btn,*/
-    /*.search-bar input:valid + .search-btn {*/
-    /*    background: #2762f3;*/
-    /*    border-radius: 0 0.375em 0.375em 0;*/
-    /*    transform: scale(1);*/
-    /*}*/
-    /*.search-bar input:focus + .search-btn:before,*/
-    /*.search-bar input:focus + .search-btn:after,*/
-    /*.search-bar input:valid + .search-btn:before,*/
-    /*.search-bar input:valid + .search-btn:after {*/
-    /*    opacity: 1;*/
-    /*}*/
-    /*.search-bar input:focus + .search-btn:hover,*/
-    /*.search-bar input:valid + .search-btn:hover,*/
-    /*.search-bar input:valid:not(:focus) + .search-btn:focus {*/
-    /*    background: #0c48db;*/
-    /*}*/
-    /*.search-bar input:focus + .search-btn:active,*/
-    /*.search-bar input:valid + .search-btn:active {*/
-    /*    transform: translateY(1px);*/
-    /*}*/
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 
-    /*@media screen and (prefers-color-scheme: dark) {*/
-    /*    body, input {*/
-    /*        color: #f1f1f1;*/
-    /*    }*/
-    /*    body {*/
-    /*        background: #171717;*/
-    /*    }*/
-    /*    .search-bar input {*/
-    /*        box-shadow: 0 0 0 0.4em #f1f1f1 inset;*/
-    /*    }*/
-    /*    .search-bar input:focus,*/
-    /*    .search-bar input:valid {*/
-    /*        background: #3d3d3d;*/
-    /*        box-shadow: 0 0 0 0.1em #3d3d3d inset;*/
-    /*    }*/
-    /*    .search-btn {*/
-    /*        background: #f1f1f1;*/
-    /*    }*/
-    /*}*/
+    nav ul li {
+        position: relative;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    nav ul li:hover > a {
+
+    }
+
+    nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li:hover > ul {
+        display: block;
+    }
+
+    nav ul li ul li {
+        width: 100%;
+    }
+
+    nav ul li ul li a {
+        padding: 15px;
+        color: #1d2124;
+    }
+
+    nav ul li ul li a:hover {
+        background-color: #666;
+    }
 
 </style>
 

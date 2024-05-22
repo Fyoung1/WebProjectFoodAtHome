@@ -2,18 +2,18 @@
     <div class="box">
         <h2>Каталог</h2>
         <ul>
-            <li><span>1</span> Молоко и яйца</li>
-            <li><span>2</span> Овощи и зелень</li>
-            <li><span>3</span> Фрукты и ягоды</li>
-            <li><span>4</span> Сладости</li>
-            <li><span>5</span> Мясо и птица</li>
-            <li><span>6</span> Рыба и морепродукты</li>
-            <li><span>7</span> Заморозка</li>
-            <li><span>8</span> Вода и напитки</li>
-            <li><span>9</span> Колбасы и сосиски</li>
-            <li><span>10</span> Хлеб и выпечка</li>
-            <li><span>11</span> Сыры</li>
-            <li><span>12</span> Макароны и крупы</li>
+            <li><a href='/MilkProductPage' style="text-decoration: none; color: initial;"><span>1</span> Молоко и яйца</a></li>
+            <li><a href='/VegetablesProductPage'style="text-decoration: none; color: initial;"> <span>2</span> Овощи и зелень</a></li>
+            <li><a href='/FruitsandBerriesProductPage'style="text-decoration: none; color: initial;"><span>3</span> Фрукты и ягоды</a></li>
+            <li><a href='/CandyProductPage'style="text-decoration: none; color: initial;"><span>4</span> Сладости</a></li>
+            <li><a href='/MeatAndBirdsProductPage'style="text-decoration: none; color: initial;"><span>5</span> Мясо и птица</a></li>
+            <li><a href='/FishProductPage'style="text-decoration: none; color: initial;"><span>6</span> Рыба и морепродукты</a></li>
+            <li><a href='/FreezingProductPage'style="text-decoration: none; color: initial;"><span>7</span> Заморозка</a></li>
+            <li><a href='/WaterAndDrinksProductPage'style="text-decoration: none; color: initial;"><span>8</span> Вода и напитки</a></li>
+            <li><a href='/SausagesProductPage'style="text-decoration: none; color: initial;"><span>9</span> Колбасы и сосиски</a></li>
+            <li><a href='/BreadProductPage'style="text-decoration: none; color: initial;"><span>10</span> Хлеб и выпечка</a></li>
+            <li><a href='/CheeseProductPage'style="text-decoration: none; color: initial;"><span>11</span> Сыры</a></li>
+            <li><a href='/PastaAndCerealsProductPage'style="text-decoration: none; color: initial;"><span>12</span> Макароны и крупы</a></li>
         </ul>
     </div>
 
@@ -59,7 +59,7 @@
     .box ul li:hover {
         transform: scale(1.1);
         z-index: 5;
-        background: #25bcff;
+        background: #888a85;
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
         color: #fff;
         opacity: 1;
@@ -69,7 +69,7 @@
         height: 20px;
         text-align: center;
         line-height: 20px;
-        background: #25bcff;
+        background: #1d2124;
         color: #fff;
         display: inline-block;
         border-radius: 50%;

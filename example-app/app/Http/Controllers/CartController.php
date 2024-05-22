@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
+   public function checkout()
+   {
+    return view('layouts.checkout');
+   }
     public function showCartTable()
     {
         $Product = Product::all();
@@ -32,6 +36,7 @@ class CartController extends Controller
                 "quantity" => 1,
                 "price" => $Product->price,
                 "description" => $Product->description,
+                "image"=>$Product->image,
             ];
         }
         session()->put('cart', $cart);
